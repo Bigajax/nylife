@@ -27,7 +27,7 @@ contratar: `PREVIA = null`, e o número da loja (já no mesmo arquivo) passa a v
 
 ```bash
 npm install
-npx next dev -p 3070
+npx next dev -p 3080
 ```
 
 Sem as chaves do Supabase o projeto roda em modo local: lê `data/catalogo.json`
@@ -41,12 +41,14 @@ nutricional (um grosso, um fino: `.fio-rotulo`), o ouro da marca só no nome e
 nas linhas, o preto da tampa no botão. Fraunces nos nomes e nos números grandes
 (300 mg, 4 formas, 10.000 UI), Figtree no corpo. A tabela de composição
 (`components/Composicao.tsx`) é a peça central; o "rótulo aberto" da home
-(`components/RotuloAberto.tsx`) é a prateleira e a ficha numa peça só. A marca é
-a ampulheta em SVG (`components/Marca.tsx`).
+(`components/RotuloAberto.tsx`) é a prateleira e a ficha numa peça só. A marca é a logo real
+do avatar do Instagram, em PNG com alfa usado como máscara (`components/Marca.tsx`,
+`public/marca/logo.png` e `simbolo.png`); o favicon é o símbolo e a imagem de
+compartilhamento (`public/og/site.jpg`) leva a logo inteira.
 
 ## Capturas
 
 ```bash
 npm i --no-save puppeteer-core
-node scripts/capturar.mjs http://localhost:3070/ saida.png 390 844 full
+node scripts/capturar.mjs http://localhost:3080/ saida.png 390 844 full
 ```

@@ -1,0 +1,13 @@
+   ▲ Next.js 15.5.24
+   - Local:        http://localhost:3080
+   - Network:      http://192.168.18.86:3080
+
+ ✓ Starting...
+ ✓ Ready in 2.8s
+ ○ Compiling / ...
+ ✓ Compiled / in 5.8s (783 modules)
+ GET / 200 in 6748ms
+ GET / 200 in 232ms
+ ✓ Compiled /icon.png in 462ms (515 modules)
+ GET /icon.png?5a68a9234c904a32 200 in 757ms
+ ✓ Compiled in 287ms (267 modules)

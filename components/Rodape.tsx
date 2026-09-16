@@ -11,7 +11,7 @@ export function Rodape({ linkWhats, instagram }: { linkWhats: string; instagram:
       <div className="mx-auto max-w-[76rem] px-4 py-12 sm:px-6 lg:px-10 lg:py-16">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <Marca tamanho="lg" />
+            <Marca tamanho="lg" className="!text-ouro-claro" />
             <p className="mt-4 max-w-[36ch] text-[0.9375rem] text-cera/70">{site.posicionamento}.</p>
           </div>
           <nav aria-label="Caminhos" className="flex flex-wrap items-center gap-x-8 gap-y-3 text-[0.9375rem]">
