@@ -1,0 +1,668 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   NYLIFE NUTRITION: "o rótulo" (16/09/2026).
+
+   O site é a etiqueta do frasco. Branco de etiqueta, fios finos como os
+   de uma tabela nutricional (um grosso, um fino), o ouro da marca só no
+   nome e nas linhas, e o preto da tampa como único acento (o botão). A
+   tipografia faz o resto: Fraunces nos nomes e nos números grandes,
+   Figtree no corpo.
+
+   Os nomes herdados (tinta, latao, fio, cera, noite, cimento, nude…)
+   seguem existindo porque o painel administrativo é escrito neles; aqui
+   apontam para as cores desta loja.
+   ───────────────────────────────────────────────────────────── */
+@theme static {
+  --color-etiqueta: #fbfaf7;
+  --color-etiqueta-escura: #f3efe6;
+  --color-tinta: #151412;
+  --color-tinta-fraca: #6b665c;
+  --color-ouro: #a8873a;
+  --color-ouro-escuro: #7f6428;
+  --color-ouro-claro: #d8bf85;
+  --color-tampa: #111111;
+  --color-fio: #e2dccf;
+  --color-fio-forte: #151412;
+  --color-cera: #f3efe6;
+  --color-cera-fraca: #a9a396;
+
+  /* apelidos herdados */
+  --color-papel: #fbfaf7;
+  --color-papel-claro: #ffffff;
+  --color-papel-escuro: #f3efe6;
+  --color-noite: #111111;
+  --color-noite-funda: #000000;
+  --color-fundo: #fbfaf7;
+  --color-cartao: #ffffff;
+  --color-latao: #a8873a;
+  --color-latao-tinta: #7f6428;
+  --color-ametista: #7f6428;
+  --color-ametista-clara: #f3efe6;
+  --color-parede: #111111;
+  --color-madeira: #a8873a;
+  --color-brasa: #7f6428;
+  --color-off-white: #ffffff;
+  --color-cimento-claro: #fbfaf7;
+  --color-cimento: #f3efe6;
+  --color-cimento-medio: #e2dccf;
+  --color-cimento-escuro: #a9a396;
+  --color-marrom: #6b665c;
+  --color-marrom-fundo: #151412;
+  --color-nude: #a8873a;
+  --color-nude-claro: #f3efe6;
+}
+
+:root {
+  --etiqueta: #fbfaf7;
+  --etiqueta-escura: #f3efe6;
+  --tinta: #151412;
+  --tinta-fraca: #6b665c;
+  --ouro: #a8873a;
+  --ouro-escuro: #7f6428;
+  --ouro-claro: #d8bf85;
+  --tampa: #111111;
+  --fio: #e2dccf;
+  --fio-forte: #151412;
+  --cera: #f3efe6;
+  --cera-fraca: #a9a396;
+
+  /* apelidos herdados */
+  --papel: var(--etiqueta);
+  --papel-claro: #ffffff;
+  --papel-escuro: var(--etiqueta-escura);
+  --noite: var(--tampa);
+  --noite-funda: #000000;
+  --fundo: var(--etiqueta);
+  --cartao: #ffffff;
+  --latao: var(--ouro);
+  --latao-tinta: var(--ouro-escuro);
+  --ametista: var(--ouro-escuro);
+  --ametista-clara: var(--etiqueta-escura);
+  --madeira: var(--ouro);
+  --off-white: #ffffff;
+  --cimento-claro: var(--etiqueta);
+  --cimento: var(--etiqueta-escura);
+  --cimento-medio: var(--fio);
+  --cimento-escuro: var(--cera-fraca);
+  --marrom: var(--tinta-fraca);
+  --marrom-fundo: var(--tinta);
+  --nude: var(--ouro);
+
+  /* o que troca dentro da tampa (bloco preto) */
+  --sup: var(--etiqueta);
+  --sup-cartao: #ffffff;
+  --texto: var(--tinta);
+  --texto-fraco: var(--tinta-fraca);
+  --ouro-texto: var(--ouro-escuro);
+  --ouro-fio: var(--ouro);
+  --risco: var(--fio);
+  --cheio-fundo: var(--tampa);
+  --cheio-texto: #ffffff;
+
+  --raio: 2px;
+  --transicao: 160ms ease-out;
+  --linha: var(--fio);
+  --linha-peso: 1px;
+}
+
+html {
+  background-color: var(--etiqueta);
+  color-scheme: light;
+}
+
+/* As famílias moram no body, não no :root: as variáveis --fonte-* do
+   next/font entram pela classe do body. */
+body {
+  --font-display: var(--fonte-display), "Fraunces", Georgia, serif;
+  --font-corpo: var(--fonte-corpo), "Figtree", system-ui, sans-serif;
+  --font-mono: var(--font-corpo);
+  color: var(--tinta);
+  font-family: var(--font-corpo);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.papel {
+  background: var(--etiqueta);
+  color: var(--tinta);
+}
+
+/* a tampa: o bloco preto, com os tokens trocados */
+.tampa {
+  --sup: var(--tampa);
+  --sup-cartao: #1c1b19;
+  --texto: var(--cera);
+  --texto-fraco: var(--cera-fraca);
+  --ouro-texto: var(--ouro-claro);
+  --ouro-fio: var(--ouro-claro);
+  --risco: rgba(243, 239, 230, 0.16);
+  --cheio-fundo: #ffffff;
+  --cheio-texto: var(--tampa);
+  background: var(--tampa);
+  color: var(--cera);
+}
+
+::selection {
+  background: var(--ouro-claro);
+  color: var(--tinta);
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--ouro);
+  outline-offset: 3px;
+}
+
+/* ── tipografia ─────────────────────────────────────────────── */
+/* A manchete: Fraunces, peso 500, eixo óptico alto, apertada. */
+.manchete {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+/* O número grande: Fraunces em tamanho de rótulo, tabular. */
+.numero {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+}
+/* O título de seção. */
+.secao {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-variation-settings: "opsz" 72;
+}
+/* A linha de rótulo: caixa alta espaçada, como no frasco ("NUTRIÇÃO
+   PARA SUA BELEZA"). Vocabulário do objeto; uma por bloco, não mais. */
+.rotulo {
+  font-family: var(--font-corpo);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ouro-texto);
+}
+.etiqueta {
+  font-family: var(--font-corpo);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--ouro-texto);
+}
+.titulo-cartao {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 48;
+}
+.preco {
+  font-family: var(--font-corpo);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.miudo {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--texto-fraco, var(--tinta-fraca));
+}
+/* nomes herdados pelo painel */
+.display-secao {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+.display-peca {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.2;
+}
+.display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.placa {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.falada {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.1875rem;
+  line-height: 1.4;
+  font-variation-settings: "opsz" 48;
+}
+.ritual {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  color: var(--ouro-texto);
+}
+.mono {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+.mono-rotulo {
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── controles ──────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  font-family: var(--font-corpo);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1;
+  padding: 0.9375rem 1.5rem;
+  transition: background-color var(--transicao), color var(--transicao),
+    border-color var(--transicao), box-shadow var(--transicao), transform var(--transicao);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+/* a tampa: o botão cheio, preto (branco sobre o bloco preto) */
+.btn--tampa,
+.btn--tinta,
+.btn--primario,
+.btn--cta {
+  background: var(--cheio-fundo);
+  color: var(--cheio-texto);
+  border: 1px solid var(--cheio-fundo);
+}
+.btn--tampa:hover:not(:disabled),
+.btn--tinta:hover:not(:disabled),
+.btn--primario:hover:not(:disabled),
+.btn--cta:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -14px rgba(17, 17, 17, 0.6);
+}
+/* o fio: só o contorno em tinta */
+.btn--fio,
+.btn--ouro,
+.btn--latao,
+.btn--linha {
+  border: 1px solid var(--texto);
+  color: var(--texto);
+  background: transparent;
+}
+.btn--fio:hover:not(:disabled),
+.btn--ouro:hover:not(:disabled),
+.btn--latao:hover:not(:disabled),
+.btn--linha:hover:not(:disabled) {
+  background: var(--texto);
+  color: var(--sup);
+}
+.btn--claro {
+  border: 1px solid rgba(243, 239, 230, 0.5);
+  color: var(--cera);
+}
+.btn--texto {
+  padding: 0.5rem 0;
+  border-radius: 0;
+  color: var(--texto);
+  font-size: 0.9375rem;
+  border-bottom: 1px solid var(--ouro-fio);
+}
+.btn--texto:hover:not(:disabled) {
+  color: var(--ouro-texto);
+}
+
+.campo {
+  width: 100%;
+  border: 1px solid var(--fio);
+  border-radius: var(--raio);
+  background: #fff;
+  padding: 0.6875rem 0.875rem;
+  font-family: var(--font-corpo);
+  font-size: 0.9375rem;
+  color: var(--tinta);
+  transition: border-color var(--transicao);
+}
+.campo:hover {
+  border-color: var(--cera-fraca);
+}
+.campo:focus {
+  outline: none;
+  border-color: var(--tinta);
+}
+.campo::placeholder {
+  color: var(--cera-fraca);
+}
+.campo--auto {
+  width: auto;
+}
+.campo--mono {
+  font-variant-numeric: tabular-nums;
+}
+
+.campo-flutuante {
+  position: relative;
+  display: block;
+}
+.campo-flutuante > span {
+  position: absolute;
+  top: -0.5rem;
+  left: 0.75rem;
+  padding: 0 0.375rem;
+  background: #fff;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--tinta-fraca);
+  line-height: 1;
+  pointer-events: none;
+}
+.campo-flutuante > input,
+.campo-flutuante > select {
+  width: 100%;
+  border: 1px solid var(--fio);
+  border-radius: var(--raio);
+  background: #fff;
+  padding: 0.9375rem 0.875rem 0.75rem;
+  font-family: var(--font-corpo);
+  font-size: 1rem;
+  color: var(--tinta);
+  transition: border-color var(--transicao);
+  appearance: none;
+}
+.campo-flutuante > select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27%3E%3Cpath d=%27M1 1l5 5 5-5%27 fill=%27none%27 stroke=%27%23151412%27 stroke-width=%271.5%27/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  padding-right: 2.25rem;
+  cursor: pointer;
+}
+.campo-flutuante > input::placeholder {
+  color: var(--cera-fraca);
+}
+.campo-flutuante > input:focus,
+.campo-flutuante > select:focus {
+  outline: none;
+  border-color: var(--tinta);
+}
+.campo-flutuante:focus-within > span {
+  color: var(--tinta);
+}
+
+.seletor {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border: 1px solid var(--fio);
+  border-radius: var(--raio);
+  background: #fff;
+  padding: 0.9375rem 0.875rem 0.75rem;
+  font-family: var(--font-corpo);
+  font-size: 1rem;
+  text-align: left;
+  color: var(--tinta);
+  cursor: pointer;
+}
+.seletor--vazio {
+  color: var(--cera-fraca);
+}
+.seletor__lista {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 0.375rem);
+  z-index: 30;
+  padding: 0.375rem;
+  background: #fff;
+  border: 1px solid var(--fio);
+  box-shadow: 0 10px 30px -12px rgba(21, 20, 18, 0.25);
+}
+.seletor__opcao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+.seletor__opcao[data-foco="true"] {
+  background: var(--etiqueta);
+}
+
+.busca-linha {
+  border: 1px solid var(--fio);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.5625rem 1rem;
+  font-family: var(--font-corpo);
+  font-size: 0.9375rem;
+  color: var(--tinta);
+}
+.busca-linha::placeholder {
+  color: var(--cera-fraca);
+}
+.busca-linha:focus {
+  outline: none;
+  border-color: var(--tinta);
+}
+
+/* chip: pílula de fio; a escolhida é cheia em tinta */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border: 1px solid var(--fio);
+  border-radius: 999px;
+  padding: 0.4375rem 0.875rem;
+  font-family: var(--font-corpo);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: var(--tinta);
+  background: #fff;
+  transition: border-color var(--transicao), background-color var(--transicao), color var(--transicao);
+  cursor: pointer;
+}
+.chip:hover {
+  border-color: var(--tinta);
+}
+.chip[aria-pressed="true"],
+.chip[data-ativo="true"],
+.chip--cheio {
+  border-color: var(--tinta);
+  background: var(--tinta);
+  color: #fff;
+}
+.chip--quadrado {
+  border-radius: var(--raio);
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   O FIO DE RÓTULO: a régua de tabela nutricional, um traço grosso e um
+   fino. Separa seções e fecha a tabela de composição.
+   ───────────────────────────────────────────────────────────── */
+.fio-rotulo {
+  border-top: 2px solid var(--texto);
+  position: relative;
+}
+.fio-rotulo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 3px;
+  border-top: 1px solid var(--texto);
+}
+.regua {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  border-top: 2px solid var(--texto);
+  position: relative;
+}
+.regua::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 3px;
+  border-top: 1px solid var(--texto);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   A TABELA DE COMPOSIÇÃO: linhas com o nome à esquerda, o pontilhado
+   de guia e o valor à direita, em tabular. É a peça central da casa.
+   ───────────────────────────────────────────────────────────── */
+.composicao {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+.composicao th,
+.composicao td {
+  padding: 0.5625rem 0;
+  vertical-align: baseline;
+  border-bottom: 1px solid var(--risco);
+}
+.composicao th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--texto);
+}
+.composicao th small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--texto-fraco);
+  margin-top: 0.125rem;
+}
+.composicao td {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--texto);
+  font-weight: 500;
+}
+.composicao td.vazio {
+  color: var(--texto-fraco);
+  font-weight: 400;
+}
+.composicao tr.destaque th,
+.composicao tr.destaque td {
+  color: var(--ouro-texto);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-variation-settings: "opsz" 48;
+}
+.composicao tfoot td {
+  border-bottom: 0;
+  border-top: 2px solid var(--texto);
+  text-align: left;
+  font-size: 0.75rem;
+  color: var(--texto-fraco);
+  white-space: normal;
+  font-weight: 400;
+  padding-top: 0.75rem;
+}
+
+/* a moldura de etiqueta: fio fino, cantos vivos, fundo branco */
+.etiqueta-foto {
+  position: relative;
+  display: block;
+  background: #fff;
+  border: 1px solid var(--risco);
+  transition: border-color var(--transicao);
+}
+a.etiqueta-foto:hover,
+.etiqueta-hover:hover .etiqueta-foto {
+  border-color: var(--ouro);
+}
+
+.cartao {
+  background: var(--sup-cartao);
+  border: 1px solid var(--risco);
+  border-radius: var(--raio);
+  overflow: hidden;
+}
+
+.foto {
+  position: relative;
+  overflow: hidden;
+  background: var(--etiqueta-escura);
+}
+.tampa .foto {
+  background: #1c1b19;
+}
+
+/* ── o único movimento: a régua de rótulo se traça na abertura ── */
+@keyframes tracar-largura {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.traca {
+  transform-origin: left;
+  animation: tracar-largura 900ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: 160ms;
+}
+
+/* ── trilhos horizontais ────────────────────────────────────── */
+.faixa-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 1rem;
+}
+.faixa-scroll::-webkit-scrollbar {
+  display: none;
+}
+.faixa-scroll > * {
+  scroll-snap-align: start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .traca {
+    animation: none;
+    transform: none;
+  }
+}

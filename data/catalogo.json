@@ -1,0 +1,138 @@
+{
+  "categorias": [
+    {
+      "id": "c-suplementos",
+      "nome": "Suplementos",
+      "slug": "suplementos",
+      "ordem": 1,
+      "ativo": true,
+      "capa": "/produtos/nutricao-para-sua-beleza.webp",
+      "capaBlur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoKAAwAA4BaJYwCdAEfUARYqTgA/Aiv83CqTzeyOpVjbY85RwD8jGg+2kzOe8LeNPi07engBd7qVAGXb9RP39WvcmhuAA=="
+    }
+  ],
+  "produtos": [
+    {
+      "id": "p-001",
+      "codigo": "NY-0001",
+      "nome": "Nutrição para sua Beleza",
+      "slug": "nutricao-para-sua-beleza",
+      "descricao": "Cabelo, pele e unhas. Fórmula premium de beleza com 300 mg de Keranat, colágeno Verisol, metilsulfonilmetano, biotina, zinco quelato, vitaminas C, D3 e E e silício. 60 cápsulas, 2 cápsulas por dia.",
+      "marca": null,
+      "preco": null,
+      "preco_promocional": null,
+      "categoria_slug": "suplementos",
+      "tamanhos": [],
+      "cores": [],
+      "destaque": true,
+      "ativo": true,
+      "ordem": 1,
+      "imagens": [
+        {
+          "url": "/produtos/nutricao-para-sua-beleza.webp",
+          "largura": 960,
+          "altura": 1200,
+          "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoKAAwAA4BaJYwCdAEfUARYqTgA/Aiv83CqTzeyOpVjbY85RwD8jGg+2kzOe8LeNPi07engBd7qVAGXb9RP39WvcmhuAA==",
+          "alt": "Nutrição para sua Beleza",
+          "ordem": 0
+        },
+        {
+          "url": "/produtos/nutricao-para-sua-beleza-2.webp",
+          "largura": 960,
+          "altura": 1200,
+          "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoKAAwAA4BaJZwAAudIB7AgUAD+9Ve1aq0Efu6rPsbex9Mjv0R8M4sGeLy6Dnh2myfIAQMh924P6Hq9aO3yfAAA",
+          "alt": "Nutrição para sua Beleza",
+          "ordem": 1
+        }
+      ]
+    },
+    {
+      "id": "p-002",
+      "codigo": "NY-0002",
+      "nome": "Vitamina Lipossomal D3, K2 e A",
+      "slug": "vitamina-lipossomal-d3-k2-e-a",
+      "descricao": "Vitamina D3 10.000 UI, vitamina K2 150 mcg e vitamina A 1.000 UI em gotas, com tecnologia lipossomal para favorecer a absorção. Imunidade, ossos, visão e coração. 30 ml.",
+      "marca": null,
+      "preco": null,
+      "preco_promocional": null,
+      "categoria_slug": "suplementos",
+      "tamanhos": [],
+      "cores": [],
+      "destaque": true,
+      "ativo": true,
+      "ordem": 3,
+      "imagens": [
+        {
+          "url": "/produtos/vitamina-lipossomal-d3-k2-e-a.webp",
+          "largura": 960,
+          "altura": 1200,
+          "blur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoKAAwAA4BaJZQCdADdK3BrAAD+9UcKtmkOJ+ILPPS25cf+giyoEDwUtNKzEI+o3YLBybb34Rj+cQAA",
+          "alt": "Vitamina Lipossomal D3, K2 e A",
+          "ordem": 0
+        }
+      ]
+    },
+    {
+      "id": "p-003",
+      "codigo": "NY-0003",
+      "nome": "Magnésio Elementar Premium 500",
+      "slug": "magnesio-elementar-premium-500",
+      "descricao": "Quatro formas de magnésio em uma fórmula completa: bisglicinato, malato, taurato e treonato. Relaxamento, função cerebral e equilíbrio muscular. 60 cápsulas, 2 cápsulas por dia.",
+      "marca": null,
+      "preco": null,
+      "preco_promocional": null,
+      "categoria_slug": "suplementos",
+      "tamanhos": [],
+      "cores": [],
+      "destaque": true,
+      "ativo": true,
+      "ordem": 2,
+      "imagens": [
+        {
+          "url": "/produtos/magnesio-elementar-premium-500.webp",
+          "largura": 960,
+          "altura": 1200,
+          "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoKAAwAA4BaJZACdADc6MPQAAD+669QxEmAz2KlT+FKJGAH6dwoDCvFovjTXb2T/mvk3nNg+PiHT8fwAAA=",
+          "alt": "Magnésio Elementar Premium 500",
+          "ordem": 0
+        },
+        {
+          "url": "/produtos/magnesio-elementar-premium-500-2.webp",
+          "largura": 960,
+          "altura": 1200,
+          "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAQCdASoKAAwAA4BaJZgCdADEaswAAP7wiolykl3wIuAiz6NpUopK5V0IHsR91NAS/ndqkMKp4yI1hAQzx/keAAA=",
+          "alt": "Magnésio Elementar Premium 500",
+          "ordem": 1
+        }
+      ]
+    }
+  ],
+  "hero": [
+    {
+      "url": "/produtos/nutricao-para-sua-beleza.webp",
+      "largura": 960,
+      "altura": 1200,
+      "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoKAAwAA4BaJYwCdAEfUARYqTgA/Aiv83CqTzeyOpVjbY85RwD8jGg+2kzOe8LeNPi07engBd7qVAGXb9RP39WvcmhuAA==",
+      "alt": "Nutrição para sua Beleza",
+      "ordem": 0,
+      "slug": "nutricao-para-sua-beleza"
+    },
+    {
+      "url": "/produtos/magnesio-elementar-premium-500.webp",
+      "largura": 960,
+      "altura": 1200,
+      "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoKAAwAA4BaJZACdADc6MPQAAD+669QxEmAz2KlT+FKJGAH6dwoDCvFovjTXb2T/mvk3nNg+PiHT8fwAAA=",
+      "alt": "Magnésio Elementar Premium 500",
+      "ordem": 0,
+      "slug": "magnesio-elementar-premium-500"
+    },
+    {
+      "url": "/produtos/vitamina-lipossomal-d3-k2-e-a.webp",
+      "largura": 960,
+      "altura": 1200,
+      "blur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoKAAwAA4BaJZQCdADdK3BrAAD+9UcKtmkOJ+ILPPS25cf+giyoEDwUtNKzEI+o3YLBybb34Rj+cQAA",
+      "alt": "Vitamina Lipossomal D3, K2 e A",
+      "ordem": 0,
+      "slug": "vitamina-lipossomal-d3-k2-e-a"
+    }
+  ]
+}
