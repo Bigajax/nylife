@@ -33,7 +33,7 @@ export function Rodape({ linkWhats, instagram }: { linkWhats: string; instagram:
           <p className="text-[0.8125rem] text-cera/55">
             © {new Date().getFullYear()} NYLIFE Nutrition. {PREVIA ? "Prévia da vitrine, ainda não é a loja." : ""}
           </p>
-          <a href="https://rafaelrazeira.com.br/landing-page" target="_blank" rel="noreferrer" aria-label="Vitrine feita por Rafael Razeira Estúdio" className="flex items-center gap-3 text-cera/55 transition-colors hover:text-cera">
+          <a href="https://rafaelrazeira.com.br/vitrine-digital" target="_blank" rel="noreferrer" aria-label="Vitrine feita por Rafael Razeira Estúdio" className="flex items-center gap-3 text-cera/55 transition-colors hover:text-cera">
             <span className="text-[0.75rem]">vitrine por</span>
             <span
               role="img"
